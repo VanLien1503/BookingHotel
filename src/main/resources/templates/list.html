@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>List User</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+    <table border="1px" cellpadding="0" cellspacing="0">
+        <thead>
+        <tr>
+            <th>FullName</th>
+            <th>Phone</th>
+            <th>address</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Username</th>
+            <th>Password</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="user : ${allUser}">
+            <tr>
+                <td th:text="${user.fullName}"></td>
+                <td th:text="${user.phone}"></td>
+                <td th:text="${user.address}"></td>
+                <td th:text="${user.age}"></td>
+                <td th:text="${user.email}"></td>
+                <td th:text="${user.status}"></td>
+                <td th:text="${user.username}"></td>
+                <td th:text="${user.password}"></td>
+
+                <td>
+                    <a th:href="@{/user/edit/__${user.id}__}">Edit</a><br/>
+                    <a th:href="@{/user/delete/__${user.id}__}">Delete</a><br/>
+                </td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+    <div>
+        <a th:href="@{'/user/viewUser'(page=${allUser.number - 1})}" th:if="${allUser.hasPrevious()}">Previous</a>
+        <span th:text="${allUser.number + 1}"></span>/<span th:text="${allUser.totalPages}"></span>
+        <a th:href="@{'/user/viewUser'(page=${allUser.number + 1})}" th:if="${allUser.hasNext()}">Next</a>
+    </div>
+</div>
+</body>
+</html>

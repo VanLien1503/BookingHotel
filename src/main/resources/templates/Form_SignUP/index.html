@@ -1,0 +1,214 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#newUser').submit(function (event) {
+            var fullName = $('#fullName').val();
+            var phone = $('#phone').val();
+            var address = $('#address').val();
+            var age = $('#age').val();
+            var email = $('#email').val();
+            var username = $('#username').val();
+            var password = $('#password').val();
+            var json = {
+                "fullName": fullName, "phone": phone, "address": address, "age": age,
+                "email": email, "username": username, "password": password
+            };
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "POST",
+                data: JSON.stringify(json),
+                url: "/creatNewUser",
+                success: function (books) {
+                    var respContent = " done";
+                    respContent += "<span class='success'>new User : [";
+                    respContent += "" + "<a href=\"/login\">dang nhap</a>" + "" + "]</span>"
+                    $("#userReponse").html(respContent);
+                }
+            });
+            event.preventDefault();
+            console.log(json);
+        });
+    });
+</script>
+
+<body>
+<div id="container">
+    <h1> DANG KY</h1>
+    <div>
+        <div id="userReponse"></div>
+    </div>
+</div>
+<form id="newUser" th:object="${users}">
+    <h2>Thông tin cá nhân</h2>
+    <fieldset>
+        <legend>Dang Ky</legend>
+        <div>
+            <div>
+                <label class="text_color">FullName</label>
+                <div>
+                    <p>
+                        <input type="text" maxlength="40" tabindex="1" th:field="*{fullName}">
+                    </p>
+                </div>
+            </div>
+            <div>
+                <label class="text_color">Giới tính:</label>
+                <div>
+                    <label class="sexRadio">
+                        <input name="gender" tabindex="2" type="radio" checked="" value="Nam">Nam
+                    </label>
+                    <label class="sexRadio">
+                        <input name="gender" tabindex="3" type="radio" value="Nữ"> Nữ
+                    </label>
+                    <p class="warning" rel="1" id="gender_error">&nbsp;</p>
+                </div>
+            </div>
+            <div>
+                <label class="text_color">Age</label>
+                <div>
+                    <p>
+                        <input type="text" maxlength="40" tabindex="1" th:field="*{age}">
+                    </p>
+                </div>
+            </div>
+            <div>
+                <label class="text_color">userName</label>
+                <div>
+                    <p>
+                        <input type="text" maxlength="40" tabindex="1" th:field="*{username}">
+                    </p>
+                </div>
+            </div>
+            <div>
+                <label class="text_color">password</label>
+                <div>
+                    <p>
+                        <input type="text" maxlength="40" tabindex="1" placeholder="" th:field="*{password}">
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <label>Tỉnh/Thành phố:</label>
+                <div>
+                    <select th:filed="*{address}">
+                        <option th:value="-1">--Tỉnh/Thành phố--</option>
+                        <option th:value="31">An Giang</option>
+                        <option th:value="37">Bà Rịa Vũng Tàu</option>
+                        <option th:value="33">Bình Dương</option>
+                        <option th:value="35">Bình Phước</option>
+                        <option th:value="28">Bình Thuận</option>
+                        <option th:value="32">Bình Định</option>
+                        <option th:value="34">Bạc Liêu</option>
+                        <option th:value="6">Bắc Cạn</option>
+                        <option th:value="12">Bắc Giang</option>
+                        <option th:value="13">Bắc Ninh</option>
+                        <option th:value="36">Bến Tre</option>
+                        <option th:value="2">Cao Bằng</option>
+                        <option th:value="38">Cà Mau</option>
+                        <option th:value="30">Cần Thơ</option>
+                        <option th:value="40">Đà Nẵng</option>
+                        <option th:value="39">Đăk Lăk</option>
+                        <option th:value="64">Điện Biên</option>
+                        <option th:value="29">Đồng Nai</option>
+                        <option th:value="41">Đồng Tháp</option>
+                        <option th:value="42">Gia Lai</option>
+                        <option th:value="1">Hà Giang</option>
+                        <option th:value="18">Hà Nam</option>
+                        <option th:value="43">Hà Nội</option>
+                        <option th:value="14">Hà Tây</option>
+                        <option th:value="46">Hà Tĩnh</option>
+                        <option th:value="62">Hà Đông</option>
+                        <option th:value="17">Hòa Bình</option>
+                        <option th:value="16">Hưng Yên</option>
+                        <option th:value="63">Hạ Long</option>
+                        <option th:value="15">Hải Dương</option>
+                        <option th:value="45">Hải Phòng</option>
+                        <option th:value="44">Hồ Chí Minh</option>
+                        <option th:value="48">Khánh Hòa</option>
+                        <option th:value="47">Kiên Giang</option>
+                        <option th:value="49">KonTum</option>
+                        <option th:value="3">Lai Châu</option>
+                        <option th:value="50">Long An</option>
+                        <option th:value="4">Lào Cai</option>
+                        <option th:value="51">Lâm Đồng</option>
+                        <option th:value="52">Lạng Sơn</option>
+                        <option th:value="19">Nam Định</option>
+                        <option th:value="53">Nghệ An</option>
+                        <option th:value="21">Ninh Bình</option>
+                        <option th:value="54">Ninh Thuận</option>
+                        <option th:value="10">Phú Thọ</option>
+                        <option th:value="26">Phú Yên</option>
+                        <option th:value="22">Quảng Bình</option>
+                        <option th:value="55">Quảng Nam</option>
+                        <option th:value="25">Quảng Ngãi</option>
+                        <option th:value="56">Quảng Ninh</option>
+                        <option th:value="23">Quảng Trị</option>
+                        <option th:value="57">Sóc Trăng</option>
+                        <option th:value="9">Sơn La</option>
+                        <option th:value="59">Thanh Hóa</option>
+                        <option th:value="20">Thái Bình</option>
+                        <option th:value="7">Thái Nguyên</option>
+                        <option th:value="24">Thừa Thiên Huế</option>
+                        <option th:value="58">Tiền Giang</option>
+                        <option th:value="60">Trà Vinh</option>
+                        <option th:value="5">Tuyên Quang</option>
+                        <option th:value="27">Tây Ninh</option>
+                        <option th:value="61">Vĩnh Long</option>
+                        <option th:value="11">Vĩnh Phúc</option>
+                        <option th:value="8">Yên Bái</option>
+                        <option th:value="65">Nơi khác</option>
+                    </select>
+                    <p class="warning" rel="1" id="city_error">&nbsp;</p>
+                </div>
+            </div>
+        </div>
+        <h3>Thông tin bảo vệ</h3>
+        <div>
+            <div>
+                <label class="text_color">Phone bảo vệ:</label>
+                <div class="infotext">
+                    <p>
+                        <input type="text" tabindex="17" th:field="*{phone}">
+                    </p>
+                    <span class="warning" rel="5" id="phone_error">&nbsp;</span>
+                    </span>
+                </div>
+            </div>
+            <div>
+                <label class="text_color">Email bảo vệ:</label>
+                <div>
+                    <p>
+                        <input type="text" tabindex="18" th:field="*{email}">
+                    </p>
+                    <span class="warning" rel="1" id="email_error">&nbsp;</span>
+                </div>
+            </div>
+        </div>
+        <p style="padding-top: 3px;text-align: center">
+            <input type="submit" value="Create">
+        </p>
+
+        </div>
+    </fieldset>
+</form>
+</body>
+</html>
