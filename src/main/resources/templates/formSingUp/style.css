@@ -1,29 +1,29 @@
-html,body{
-    background-image: url('https://thietbiketnoi.com/wp-content/uploads/2020/01/tong-hop-hinh-nen-background-vector-designer-dep-do-phan-giai-fhd-2k-4k-moi-nhat-1.jpg');
-    background-size:cover;
-    background-repeat: no-repeat;
-    height: 1200px;
-    font-family: 'Numans', sans-serif;
+/*html,body{*/
+/*    background-image: url('https://thietbiketnoi.com/wp-content/uploads/2020/01/tong-hop-hinh-nen-background-vector-designer-dep-do-phan-giai-fhd-2k-4k-moi-nhat-1.jpg');*/
+/*    background-size:cover;*/
+/*    background-repeat: no-repeat;*/
+/*    height: 1200px;*/
+/*    font-family: 'Numans', sans-serif;*/
 
-}
-fieldset{
-    margin-left: 500px;
-    width: 500px;
-    height: 1100px;
-    background: rgba(194, 154, 232, 0.37);
-    padding-left: 20px;
-}
-legend{
-    text-align: center;
-    color: rgba(0, 0, 255, 0.97);
-}
-h2{
-    text-align: center;
-    color: rgba(255, 0, 255, 0.7);
-}
-.text_color{
-    color: aqua;
-}
-h3{
-    color: #f60707;
-}
+/*}*/
+/*fieldset{*/
+/*    margin-left: 500px;*/
+/*    width: 500px;*/
+/*    height: 1100px;*/
+/*    background: rgba(194, 154, 232, 0.37);*/
+/*    padding-left: 20px;*/
+/*}*/
+/*legend{*/
+/*    text-align: center;*/
+/*    color: rgba(0, 0, 255, 0.97);*/
+/*}*/
+/*h2{*/
+/*    text-align: center;*/
+/*    color: rgba(255, 0, 255, 0.7);*/
+/*}*/
+/*.text_color{*/
+/*    color: aqua;*/
+/*}*/
+/*h3{*/
+/*    color: #f60707;*/
+/*}*/

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Booking-Hotel-"Lieu"</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -13,12 +13,15 @@
             margin-bottom: 20px;
             border-radius: 0;
         }
-        .container-fluid{
+
+        .container-fluid {
             height: 75px;
         }
-        .form-inline{
+
+        .form-inline {
             margin-top: 13px;
         }
+
         /* Remove the jumbotron's default bottom margin */
         .jumbotron {
             margin-bottom: 0;
@@ -49,14 +52,20 @@
         }
 
         .carousel-inner {
-            background: #d2f5ed;
+            background: #2cecc1b5;
+            margin-top: 5px;
+            height: 300px;
         }
-        .item active{
+
+        .item active {
             height: 100%;
+        }
+        body{
+            background-color: whitesmoke;
         }
     </style>
 </head>
-<body >
+<body>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -82,60 +91,68 @@
                         <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
                     </form>
                 </li>
-                <li><a href="/creat"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="/login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-                <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+                <li>
+                        <a class="glyphicon glyphicon-user" type="button" data-toggle="dropdown">DANG NHAP
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="/login" class="glyphicon glyphicon-user"> LOGIN</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="/edit"  class="glyphicon glyphicon-pencil">   EDIT</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="/logout" class="glyphicon glyphicon-log-in">  LOGOUT</a></li>
+                        </ul>
+                </li>
+<!--                <li><a href="/login"><span class="glyphicon glyphicon-user"></span> LOGIN</a></li>-->
+<!--                <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>-->
             </ul>
         </div>
     </div>
 </nav>
 
-<div class="jumbotron">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+<!--<div class="jumbotron">-->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="../anh1.jpg" alt="New York" width="300" height="350">
-                <div class="carousel-caption">
-                    <h3>New York</h3>
-                    <p>The atmosphere in New York is lorem ipsum.</p>
-                </div>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="../anh1.jpg" alt="New York" width="500" height="500">
+            <div class="carousel-caption">
+                <h3>New York</h3>
+                <p>Thank you, New Yorl - A night we won't forget.</p>
             </div>
 
-            <div class="item">
-                <img src="/anh2.jpg" alt="Chicago" width="300" height="350">
-                <div class="carousel-caption">
-                    <h3>Chicago</h3>
-                    <p>Thank you, Chicago - A night we won't forget.</p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="anh5.jpg" alt="Chicago" width="300" height="350">
-                <div class="carousel-caption">
-                    <h3>Chicago</h3>
-                    <p>Thank you, Chicago - A night we won't forget.</p>
-                </div>
+        </div>
+        <div class="item">
+            <img src="/anh2.jpg" alt="Chicago" width="500" height="500">
+            <div class="carousel-caption">
+                <h3>Chicago</h3>
+                <p>Thank you, Chicago - A night we won't forget.</p>
             </div>
         </div>
-
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        <div class="item">
+            <img src="anh5.jpg" alt="Chicago" width="500" height="500">
+            <div class="carousel-caption">
+                <h3>Chicago</h3>
+                <p>Thank you, Chicago - A night we won't forget.</p>
+            </div>
+        </div>
     </div>
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
+<!--</div>-->
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
