@@ -11,7 +11,38 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" href="style.css">
+<!--    <link rel="stylesheet" href="style.css">-->
+    <style>
+        html,body{
+            background-image: url('https://thietbiketnoi.com/wp-content/uploads/2020/01/tong-hop-hinh-nen-background-vector-designer-dep-do-phan-giai-fhd-2k-4k-moi-nhat-1.jpg');
+            background-size:cover;
+            background-repeat: no-repeat;
+            height: 900px;
+            font-family: 'Numans', sans-serif;
+
+        }
+        fieldset{
+            margin-left: 500px;
+            width: 500px;
+            height: 900px;
+            background: rgba(194, 154, 232, 0.37);
+            padding-left: 20px;
+        }
+        legend{
+            text-align: center;
+            color: rgba(0, 0, 255, 0.97);
+        }
+        h2{
+            text-align: center;
+            color: rgba(255, 0, 255, 0.7);
+        }
+        .text_color{
+            color: aqua;
+        }
+        h3{
+            color: #f60707;
+        }
+    </style>
 </head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -36,12 +67,12 @@
                 type: "POST",
                 data: JSON.stringify(json),
                 url: "/creatNewUser",
-                success: function (books) {
-                    var respContent = " done";
-                    respContent += "<span class='success'>new User : [";
-                    respContent += "" + "<a href=\"/login\">dang nhap</a>" + "" + "]</span>"
-                    $("#userReponse").html(respContent);
-                }
+                // success: function (books) {
+                //     var respContent = " done";
+                //     respContent += "<span class='success'>new User : [";
+                //     respContent += "" + "<a href=\"/login\">dang nhap</a>" + "" + "]</span>"
+                //     $("#userReponse").html(respContent);
+                // }
             });
             event.preventDefault();
             console.log(json);
@@ -50,12 +81,12 @@
 </script>
 
 <body>
-<div id="container">
-    <h1> DANG KY</h1>
-    <div>
-        <div id="userReponse"></div>
-    </div>
-</div>
+<!--<div id="container">-->
+<!--    <h1> DANG KY</h1>-->
+<!--    <div>-->
+<!--        <div id="userReponse"></div>-->
+<!--    </div>-->
+<!--</div>-->
 <form id="newUser" th:object="${users}">
     <h2>Thông tin cá nhân</h2>
     <fieldset>
@@ -109,7 +140,7 @@
             <div>
                 <label>Tỉnh/Thành phố:</label>
                 <div>
-                    <select th:filed="*{address}">
+                    <select th:field="*{address}">
                         <option th:value="-1">--Tỉnh/Thành phố--</option>
                         <option th:value="31">An Giang</option>
                         <option th:value="37">Bà Rịa Vũng Tàu</option>

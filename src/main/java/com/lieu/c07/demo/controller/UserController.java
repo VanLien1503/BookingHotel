@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value = "/")
+//@RequestMapping(value = "/")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -22,33 +22,45 @@ public class UserController {
 
     @RequestMapping(value = "/creat", method = RequestMethod.GET)
     public ModelAndView creatUserPage() {
-        ModelAndView modelAndView = new ModelAndView("Form_SignUP/index");
+        ModelAndView modelAndView = new ModelAndView("formSingUp/index");
         modelAndView.addObject("users", new User());
         return modelAndView;
     }
-    @RequestMapping(value = "/creatNewUser",method = RequestMethod.POST,
+
+    @RequestMapping(value = "/creatNewUser", method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public User creatUser(@RequestBody User user){
+    public User creatUser(@RequestBody User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userService.save(user);
     }
 
-//
+    //login
+//    @RequestMapping(value = "/login", method = RequestMethod.GET)
+//    public ModelAndView viewLogin() {
+//        ModelAndView modelAndView = new ModelAndView("Form_Login/index");
+//        modelAndView.addObject("users", new User());
+//        return modelAndView;
+//    }
 
     @RequestMapping(value = "", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public Page<User> allUser(Pageable pageable){
+    public Page<User> allUser(Pageable pageable) {
         return userService.findAll(pageable);
     }
+
     @GetMapping("/viewUser")
     public ModelAndView allUserPageble(@PageableDefault(2) Pageable pageable) {
         ModelAndView modelAndView = new ModelAndView("list");
 
         modelAndView.addObject("allUser", allUser(pageable));
         return modelAndView;
+    }
+    @GetMapping("/login")
+    public String loginPage(){
+        return "Form_Login/index";
     }
 }

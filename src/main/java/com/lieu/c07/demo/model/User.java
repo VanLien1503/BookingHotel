@@ -20,7 +20,8 @@ public class User {
     private String address;
     private Long age;
     private String email;
-    private Boolean status;
+    @Column(columnDefinition = "boolean default false")
+    private boolean status;
 
     private String username;
     private String password;
