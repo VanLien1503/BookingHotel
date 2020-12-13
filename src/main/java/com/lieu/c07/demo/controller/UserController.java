@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-//@RequestMapping(value = "/")
 public class UserController {
     @Autowired
     private UserService userService;

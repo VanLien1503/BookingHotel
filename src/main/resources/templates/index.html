@@ -1,216 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Booking-Hotel-"Lieu"</title>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Lieu:Booking</title>
     <style>
-        /* Remove the navbar's default rounded borders and increase the bottom margin */
-        .navbar {
-            margin-bottom: 20px;
-            border-radius: 0;
+        header {
+            position: relative;
+        }
+        .shopping-mall{
+            position: absolute;
+            bottom: 20px;
+            font-variant: small-caps;
         }
 
-        .container-fluid {
-            height: 75px;
+        .shopping-mall>h1{
+            font-family: Impact;
+            font-size: 50px;
+            color: #04f5d8;
+            letter-spacing: 0.3px;
+            text-shadow: 0 0 2px black;
+            padding-bottom: 0px;
+            border-bottom: 1px dotted gray;
+            margin: 0px;
         }
-
-        .form-inline {
-            margin-top: 13px;
-        }
-
-        /* Remove the jumbotron's default bottom margin */
-        .jumbotron {
-            margin-bottom: 0;
-        }
-
-        /* Add a gray background color and some padding to the footer */
-        footer {
-            height: 50%;
-            background-color: #2b2b2b;
-            padding: 25px;
-        }
-
-        /* food*/
-        .container {
-            padding: 80px 120px;
-        }
-
-        .person {
-            border: 10px solid transparent;
-            margin-bottom: 25px;
-            width: 80%;
-            height: 80%;
-            opacity: 0.7;
-        }
-
-        .person:hover {
-            border-color: #f1f1f1;
-        }
-
-        .carousel-inner {
-            background: #2cecc1b5;
+        .shopping-mall>h5{
             margin-top: 5px;
-            height: 300px;
+            letter-spacing: 0.5px;
+        }
+        .poly-cart{
+            margin-top: 5px;
         }
 
-        .item active {
-            height: 100%;
+        .poly-cart ul {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+            font-variant: small-caps;
         }
-        body{
-            background-color: whitesmoke;
+
+        .poly-cart .panel-heading strong {
+            font-variant: small-caps;
+            font-size: larger;
+            text-shadow: 0 0 2px darkgray;
         }
+
+        .poly-prod{
+            text-align:center;
+            padding:5px;
+        }
+
+        .poly-prod .panel-body img{
+            height: 150px;
+            max-width: 95%;
+        }
+        #form-Search{
+            margin-top: 10px;
+        }
+
     </style>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Home</a>
+<div class="container" style = "height: auto">
+    <header class="row">
+        <div class = "shopping-mall">
+            <h1>Booking-Hotel : LIEU</h1>
+            <h5 style="color: #f60707">Thiên Đường Của Những Chuyến Đi Xa...!</h5>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <!--                <li class="active"><a href="#">Home</a></li>-->
-                <li><a href="#">.....</a></li>
-                <li><a href="#">.....</a></li>
-                <!--                <li><a href="#">Stores</a></li>-->
-                <!--                <li><a href="#">Contact</a></li>-->
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
-                    </form>
-                </li>
-                <li>
-                        <a class="glyphicon glyphicon-user" type="button" data-toggle="dropdown">DANG NHAP
-                            <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="/login" class="glyphicon glyphicon-user"> LOGIN</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="/edit"  class="glyphicon glyphicon-pencil">   EDIT</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="/logout" class="glyphicon glyphicon-log-in">  LOGOUT</a></li>
+        <img class = "pull-right" src="../header-object.png"/>
+    </header>
+    <nav class="navbar navbar-inverse navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> Trang chủ</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#"> <span class="glyphicon glyphicon-list-alt"></span> Giới thiệu<span class="sr-only">(current)</span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-earphone"></span> Liên hệ</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Góp ý</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Hỏi đáp</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Tài khoản<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Đăng nhập</a></li>
+                            <li><a href="#">Quên mật khẩu</a></li>
+                            <li><a href="#">Đăng ký thành viên</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Đổi mật khẩu</a></li>
+                            <li><a href="#">Cập nhật hồ sơ</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Đăng xuất</a></li>
                         </ul>
-                </li>
-<!--                <li><a href="/login"><span class="glyphicon glyphicon-user"></span> LOGIN</a></li>-->
-<!--                <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>-->
-            </ul>
-        </div>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form class="form-inline" id="form-Search">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+                        </form>
+                    </li>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">Tiếng Việt</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class = "row">
+        <article class="col-sm-9">
+            <div class = "col-sm-4 poly-prod">
+                <div class = "panel panel-default">
+                    <div class = "panel-heading">
+                        <h4 class = "panel-title">
+                            Hotel-1
+                        </h4>
+                    </div>
+                    <div class = "panel-body">
+                        <img src="../1.jpg" height="228" width="292"/></div>
+                    <div class = "panel-footer">
+                        <a href="#">Xem chi Tiet</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "col-sm-4 poly-prod">
+                <div class = "panel panel-default">
+                    <div class = "panel-heading">
+                        <h4 class = "panel-title">
+                            Hotel-2
+                        </h4>
+                    </div>
+                    <div class = "panel-body">
+                        <img src="../2.jpg" height="228" width="292"/></div>
+                    <div class = "panel-footer">
+                        <a href="#">Xem chi Tiet</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "col-sm-4 poly-prod">
+                <div class = "panel panel-default">
+                    <div class = "panel-heading">
+                        <h4 class = "panel-title">
+                            Hotel-3
+                        </h4>
+                    </div>
+                    <div class = "panel-body">
+                        <img src="../3.jpg" height="228" width="292"/></div>
+                    <div class = "panel-footer">
+                        <a href="#">Xem chi Tiet</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "col-sm-4 poly-prod">
+                <div class = "panel panel-default">
+                    <div class = "panel-heading">
+                        <h4 class = "panel-title">
+                            Hotel-4
+                        </h4>
+                    </div>
+                    <div class = "panel-body">
+                        <img src="../4.jpg" height="228" width="292"/></div>
+                    <div class = "panel-footer">
+                        <a href="#">Xem chi Tiet</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "col-sm-4 poly-prod">
+                <div class = "panel panel-default">
+                    <div class = "panel-heading">
+                        <h4 class = "panel-title">
+                            Hotel-5
+                        </h4>
+                    </div>
+                    <div class = "panel-body">
+                        <img src="../5.jpg" height="228" width="292"/></div>
+                    <div class = "panel-footer">
+                        <a href="#">Xem chi Tiet</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "col-sm-4 poly-prod">
+                <div class = "panel panel-default">
+                    <div class = "panel-heading">
+                        <h4 class = "panel-title">
+                            Hotel-6
+                        </h4>
+                    </div>
+                    <div class = "panel-body">
+                        <img src="../6.jpg" height="228" width="292"/></div>
+                    <div class = "panel-footer">
+                        <a href="#">Xem chi Tiet</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </article>
+        <aside class="col-sm-3">
+            <div class = "poly-cart">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img class="col-sm-5" src="../shoppingcart.gif"/>
+                        <ul class="col-sm-7">
+                            <li>100 items</li>
+                            <li>$56.8</li>
+                            <li><a href="#">Xem giỏ hàng</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class = "glyphicon glyphicon-th-list"></span>
+                    <strong>Chủng Loại</strong>
+                </div>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">Double Room</a>
+                    <a href="#" class="list-group-item">Single Room</a>
+                    <a href="#" class="list-group-item">Family's Room</a>
+                    <a href="#" class="list-group-item">Vip Room</a>
+                    <a href="#" class="list-group-item">Normal Room</a>
+                    <a href="#" class="list-group-item">Especially</a>
+                </div>
+            </div>
+        </aside>
     </div>
-</nav>
-
-<!--<div class="jumbotron">-->
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="../anh1.jpg" alt="New York" width="500" height="500">
-            <div class="carousel-caption">
-                <h3>New York</h3>
-                <p>Thank you, New Yorl - A night we won't forget.</p>
-            </div>
-
+    <footer class="panel panel-default">
+        <div class = "panel-heading text-center">
+            <p>CodeGym &copy; 2017</p>
         </div>
-        <div class="item">
-            <img src="/anh2.jpg" alt="Chicago" width="500" height="500">
-            <div class="carousel-caption">
-                <h3>Chicago</h3>
-                <p>Thank you, Chicago - A night we won't forget.</p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="anh5.jpg" alt="Chicago" width="500" height="500">
-            <div class="carousel-caption">
-                <h3>Chicago</h3>
-                <p>Thank you, Chicago - A night we won't forget.</p>
-            </div>
-        </div>
-    </div>
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
+    </footer>
 </div>
-<!--</div>-->
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive"
-                                             style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="panel panel-danger">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive"
-                                             style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="panel panel-success">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive"
-                                             style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-    </div>
-</div>
-<br>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive"
-                                             style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive"
-                                             style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive"
-                                             style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-    </div>
-</div>
-
 </body>
 </html>
